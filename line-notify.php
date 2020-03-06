@@ -1,7 +1,8 @@
  <?php 
 
+    include_once 'connectdb.php'; 
 
-    $header = "Testing Line Notify";
+    $header = "รีเควสเพลงจากลูกค้าจ้า";
     $table_no = $_POST['table_no'];
     $song = $_POST['song'];
     $art = $_POST['art'];
@@ -14,15 +15,20 @@
                 "\n". "แคปชั่น : " . $caption;
 
     if (isset($_POST["submit"])) {
+        $query = "INSERT INTO line_notify_music (table_no, name_music, artist, caption)
+            VALUE('" . $table_no . "', '" . $song . "', '" . $art . "', '" . $caption . "')";
+        $result = mysqli_query($conn, $query);
+
+        
         if ( $table_no <> "" ||  $song <> "" ||  $art <> "" ||  $caption <> "" ) {
             sendlinemesg();
-            header('Content-Type: text/html; charset=utf8');
+            
             $res = notify_message($message);
             echo "<script>alert('วาฬขอเพลงให้ละ');</script>";
-            header("location: index.php");
+            echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
         } else {
             echo "<script>alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script>";
-            header("location: index.php");
+            echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
         }
     }
 
