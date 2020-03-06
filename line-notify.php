@@ -19,22 +19,24 @@
             VALUE('" . $table_no . "', '" . $song . "', '" . $art . "', '" . $caption . "')";
         $result = mysqli_query($conn, $query);
 
-        
-        if ( $table_no <> "" ||  $song <> "" ||  $art <> "" ||  $caption <> "" ) {
-            sendlinemesg();
-            
-            $res = notify_message($message);
             echo "<script>alert('วาฬขอเพลงให้ละ');</script>";
             echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
         } else {
             echo "<script>alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script>";
             echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
         }
-    }
+    
+        
+        if ( $table_no <> "" ||  $song <> "" ||  $art <> "" ||  $caption <> "" ) {
+            sendlinemesg();
+            
+            $res = notify_message($message);
+        }
+        
 
     function sendlinemesg() {
 		// LINE LINE_API https://notify-api.line.me/api/notify
-		// LINE TOKEN mhIYaeEr9u3YUfSH1u7h9a9GlIx3Ry6TlHtfVxn1bEu แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
+		// LINE TOKEN f1LE62anzQOY3kYMfNsHaw4fhcqJUpohTyOMCA0TAgG แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
         define('LINE_API',"https://notify-api.line.me/api/notify");
         define('LINE_TOKEN',"f1LE62anzQOY3kYMfNsHaw4fhcqJUpohTyOMCA0TAgG");
 

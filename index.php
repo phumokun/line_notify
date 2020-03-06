@@ -13,28 +13,38 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mx-auto col-md-offset-4" style="margin-top: 15px"> 
-                <form action="line-notify.php" method="post">
-                    <label style="margin-left:14px;">โต๊ะที่</label>
-                    <br>
-                    <input style="margin-bottom: 15px;" name="table_no" placeholder='หมายเลขโต๊ะ' type='text'>
-                    <br>
-                    <label style="margin-left:14px;">ชื่อเพลง</label><br>
-                    <input style="margin-bottom: 15px;" name="song" placeholder='ระบุชื่อเพลง' type='text'>
-                    <br>
-                    <label style="margin-left:14px;">ศิลปิน</label><br>
-                    <input style="margin-bottom: 15px;" name="art" placeholder='ระบุชื่อศิลปิน' type='text'>
-                    <br>
-                    <label style="margin-left:14px;">แคปชั่น</label><br>
-                    <input style="margin-bottom: 15px;" name="caption" placeholder='' type='text'>
-                    <br>
-                    <div class="text-center">
+            <div class="col-md-4 mx-auto col-md-offset-4" style="margin-top: 5px"> 
+                <form action="line-notify.php" method="post" onsubmit="return submitFrm()";>
+                    <label style="margin-left: 15px; margin-top: 7px;">โต๊ะที่</label><br>
+                    <input name="table_no" placeholder='หมายเลขโต๊ะ' type='text'>                
+                    <label style="margin-left: 15px; margin-top: 7px;">ชื่อเพลง</label><br>
+                    <input name="song" placeholder='ระบุชื่อเพลง' type='text'>                  
+                    <label style="margin-left: 15px; margin-top: 7px;">ศิลปิน</label><br>
+                    <input name="art" placeholder='ระบุชื่อศิลปิน' type='text'>            
+                    <label style="margin-left: 15px; margin-top: 7px;">แคปชั่น</label><br>
+                    <input name="caption" placeholder='' type='text'>
+                    <input class="btn btn-primary" style="width:90%;" type="submit" name="submit" value="ตกลง">
+                    <!-- <div class="text-center"> 
                         <button class="btn btn-primary" style="margin-left:14px;" type="submit" name="submit">ตกลง</button>
-                    </div>
+                    </div>   -->
                 </form>
             </div>
         </div>
     </div>
-    
+
+<script>
+    function submitFrm()
+    {
+        if(confirm('จะขอเพลงนี้จริงอะ !!!')==true)
+        {
+            document.form_submit.submit.disabled=true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
