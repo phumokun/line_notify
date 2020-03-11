@@ -51,9 +51,9 @@ if (isset($_POST["submit"])) {
 function sendlinemesg() {
     // LINE LINE_API https://notify-api.line.me/api/notify
     // LINE TOKEN f1LE62anzQOY3kYMfNsHaw4fhcqJUpohTyOMCA0TAgG แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
-    // w0iSSfRKedrsRplVSIxfmlKLY1YJ7oCFVkTz6b2LaNs
+    
     define('LINE_API',"https://notify-api.line.me/api/notify");
-    define('LINE_TOKEN',"");
+    define('LINE_TOKEN',"w0iSSfRKedrsRplVSIxfmlKLY1YJ7oCFVkTz6b2LaNs");
 
     function notify_message($message) {
         $queryData = array('message' => $message);
@@ -119,6 +119,8 @@ function sendlinemesg() {
            
     <script type="text/javascript">
 
+    
+
     window.onload = function (e) {
         // init で初期化。基本情報を取得。
         // https://developers.line.me/ja/reference/liff/#initialize-liff-app
@@ -133,8 +135,7 @@ function sendlinemesg() {
             
             liff.sendMessages([{
                 type: "text",
-                
-                text: "<?php echo $head, '\n', 'โต๊ะที่ : ', $table_no; ?>"
+                text: "<?php echo $head; ?>"
             }, {
                 type: 'sticker',
                 packageId: '11537',
