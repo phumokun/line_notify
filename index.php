@@ -1,7 +1,7 @@
 <?php 
 
 
-include_once 'connectdb.php'; 
+    include_once 'connectdb.php'; 
 
     $header = "รีเควสเพลงจากลูกค้าจ้า";
     $table_no = $_POST['table_no'];
@@ -9,7 +9,7 @@ include_once 'connectdb.php';
     $art = $_POST['art'];
     $caption = $_POST['caption'];
 
-    $head = "ขอเพลงอะไรไปบอกวาฬหน่อยจิ";
+    $head = "ขอเพลงจ้าาาาา";
 
     $message = $header.
                 "\n". "โต๊ะที่ : " . $table_no .
@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
 
 function sendlinemesg() {
     // LINE LINE_API https://notify-api.line.me/api/notify
-    // LINE TOKEN f1LE62anzQOY3kYMfNsHaw4fhcqJUpohTyOMCA0TAgG แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
+    // LINE TOKEN w0iSSfRKedrsRplVSIxfmlKLY1YJ7oCFVkTz6b2LaNs แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
     define('LINE_TOKEN',"w0iSSfRKedrsRplVSIxfmlKLY1YJ7oCFVkTz6b2LaNs");
